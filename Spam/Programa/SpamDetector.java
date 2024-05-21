@@ -17,11 +17,11 @@ public class SpamDetector {
 
     public static void main(String[] args) {
         LeitorArquivo leitor = new LeitorArquivo();
-        String caminhoArquivo = "C:\\Users\\Nome\\Desktop\\Spam\\ArquivoSpam.txt"; // Especifique o caminho do arquivo aqui
+        String caminhoArquivo = "C:\\Users\\Japsps\\Desktop\\Spam\\ArquivoSpam.txt"; // Especifique o caminho do arquivo aqui
         String texto = leitor.lerArquivo(caminhoArquivo);
         
         int spamScore = calculateSpamScore(texto);
-        String classification = classifyText(spamScore, 20); 
+        String classification = classifyText(spamScore); 
         System.out.println("Pontuação de Spam: " + spamScore);
         System.out.println("Classificação: " + classification);
     }
@@ -38,7 +38,15 @@ public class SpamDetector {
         return score;
     }
 
-    public static String classifyText(int score, int threshold) {
-        return score >= threshold ? "Spam" : "Não Spam";
+    public static String classifyText(int score) {
+        if (score >= 5 && score <= 30) {
+            return "Francamente Suspeito";
+        } else if (score >= 31 && score <= 70) {
+            return "Potencialmente Suspeito";
+        } else if (score > 70) {
+            return "Spam";
+        } else {
+            return "Não Suspeito";
     }
+ }
 }
