@@ -17,7 +17,7 @@ public class SpamDetector {
 
     public static void main(String[] args) {
         LeitorArquivo leitor = new LeitorArquivo();
-        String caminhoArquivo = "C:\\Users\\Japsps\\Desktop\\Spam\\ArquivoSpam.txt"; // Especifique o caminho do arquivo aqui
+        String caminhoArquivo = "C:\\Users\\Nome\\Desktop\\Spam\\ArquivoSpam.txt"; // Especifique o caminho do arquivo aqui
         String texto = leitor.lerArquivo(caminhoArquivo);
         
         int spamScore = calculateSpamScore(texto);
